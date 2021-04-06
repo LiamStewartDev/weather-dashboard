@@ -1,4 +1,17 @@
 var apiKey = 'fb04d22f01f25fc4a4dafd4ff19d1acd'
+var searchBtn = $('#search-btn');
 
 
-//when search button is clicked, we will display current weather and 5 day forecast for the city that was typed.
+searchBtn.on('click', function () {
+
+    var city = $('#searchInput').val();
+    var currentUrl = 'https://api.openweathermap.org/data/2.5/weather?q=' + city + '&appid=' + apiKey + '&units=imperial';
+    // var forecastUrl = 'https://api.openweathermap.org/data/2.5/forecast?q=' + city + '&appid=' + apiKey + '&units=imperial';
+
+
+    $.ajax({
+        url: currentUrl,
+        method: 'GET',
+    }).then(function (response) {
+    
+})
